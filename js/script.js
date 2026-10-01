@@ -2,7 +2,7 @@
 
 "use strict";
 
-const PERSONAS = ["Joan", "Víctor", "Batiste", "Chema", "Marc", "Jordi", "Guillem"];
+const PERSONAS = ["Joan", "Víctor", "Batiste", "Chema", "Marc", "Jordi", "Guillem", "Joan Langa"];
 
 // URL de la aplicación web de config-nube/Codigo.gs (terminada en /exec).
 const URL_APPS_SCRIPT = "https://script.google.com/macros/s/AKfycbzMPTs9sQkZCp2Ne6rMwppaRpQDYG3qnBQ1oaWsqNO0lM9sPq1P1PfrYGuH-191MZGf/exec";
