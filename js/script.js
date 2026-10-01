@@ -35,7 +35,7 @@ const CATEGORIAS = [
   { id: "lore", nombre: "El que tiene más lore" },
   { id: "peores-consejos", nombre: "El que da los peores consejos" },
   { id: "mes-putero", nombre: "🫃Mes putero" },
-  { id: "persona", nombre: "👑 PERSONA DEL AÑO —" }
+  { id: "persona", nombre: "👑 PERSONA DEL AÑO" }
 ];
 
 const NUM_CATEGORIAS = CATEGORIAS.length;
@@ -376,6 +376,8 @@ btnEnviar.addEventListener("click", async () => {
     if (resultado.ok !== true) throw new Error(resultado.error || "La hoja no ha confirmado el guardado.");
     guardarTodo();
     mensaje(estadoEnviar, "📨 Respuestas guardadas en la hoja. Puedes corregirlas y volver a enviar; se actualizarán sin duplicarse.");
+    const agradecimiento = document.getElementById("gracias-voto");
+    if (!agradecimiento.open) agradecimiento.showModal();
   } catch (e) {
     guardarTodo();
     mensaje(estadoEnviar, "No se ha confirmado el envío. Tu borrador sigue aquí. " + e.message);
