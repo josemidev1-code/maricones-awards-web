@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Maricones Awards — la gala de los recordatorios. Elige a una persona en cada categoría y explica por qué.">
+  <title>Maricones Awards — La Gala</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800;900&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+
+  <!-- Fondo decorativo: lo llena el script -->
+  <div id="estrellas" class="estrellas" aria-hidden="true"></div>
+  <div class="luz-escena" aria-hidden="true"></div>
+
+  <!-- Barra de progreso de scroll -->
+  <div id="progreso-scroll" class="progreso-scroll" aria-hidden="true"></div>
+
+  <!-- Navegación -->
+  <nav id="nav" class="nav">
+    <a class="nav__logo" href="#">✦ <span>Maricones&nbsp;<em>Awards</em></span></a>
+    <button id="nav-toggle" class="nav__toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-links">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav__links" id="nav-links">
+      <li><a href="#quien">Respondientes</a></li>
+      <li><a href="#campos">Categorías</a></li>
+      <li><a href="#resumen">Resumen</a></li>
+      <li><a href="#enviar" class="nav__cta">Enviar respuestas</a></li>
+    </ul>
+  </nav>
+
+  <!-- Cabecera -->
+  <header class="hero">
+    <p class="hero__eyebrow">La gran noche de los recordatorios</p>
+    <h1 class="hero__titulo">Maricones<br><span class="hero__oro">Awards</span></h1>
+    <div class="linea-oro" aria-hidden="true"><span class="linea-oro__rayo"></span><span class="linea-oro__joya">✦</span><span class="linea-oro__rayo"></span></div>
+    <p class="hero__sub">
+      26 categorías, vuestras nominaciones y las historias que las explican.
+      Elige a quién darías cada premio y cuéntanos por qué.
+    </p>
+    <a class="hero__cta btn btn--oro" href="#quien">Responder el cuestionario</a>
+  </header>
+
+  <main>
+
+    <!-- Quién responde -->
+    <section id="quien" class="seccion seccion--estrecha">
+      <p class="eyebrow"><span>01</span> · Respondientes</p>
+      <h2 class="seccion__titulo">¿Quién está en el escenario?</h2>
+      <div class="tarjeta">
+        <p class="tarjeta__nota">
+          Elige tu nombre e introduce tu contraseña. El borrador se guarda
+          en este navegador hasta que envíes tus respuestas al organizador.
+        </p>
+        <label class="campo__etiqueta" for="quien-select">Mi nombre</label>
+        <select id="quien-select" class="campo-input"></select>
+        <div class="progreso" id="progreso-persona" hidden>
+          <div class="progreso__barra" role="progressbar" aria-valuemin="0" aria-valuemax="26" aria-valuenow="0" id="progreso-barra">
+            <div class="progreso__relleno" id="progreso-relleno"></div>
+          </div>
+          <span class="progreso__texto" id="progreso-texto"></span>
+        </div>
+        <p id="estado-guardado" class="estado" role="status" aria-live="polite"></p>
+      </div>
+    </section>
+
+    <!-- Categorías / momentos -->
+    <section id="campos" class="seccion seccion--estrecha">
+      <p class="eyebrow"><span>02</span> · Categorías</p>
+      <h2 class="seccion__titulo">26 categorías, tus elecciones</h2>
+      <p class="seccion__intro">
+        En cada categoría, elige a una persona y explica por qué.
+        Para mejor momento, mensaje o frase, cuenta también qué pasó.
+        Puedes saltarte una categoría dejando los dos campos vacíos.
+      </p>
+      <div id="lista-campos"></div>
+    </section>
+
+    <!-- Resumen -->
+    <section id="resumen" class="seccion seccion--estrecha">
+      <p class="eyebrow"><span>03</span> · Resumen</p>
+      <p id="resumen-texto" class="resumen__texto"></p>
+      <ul id="resumen-elecciones" class="resumen-elecciones"></ul>
+    </section>
+
+    <!-- Enviar -->
+    <section id="enviar" class="seccion seccion--envio">
+      <div class="tarjeta tarjeta--envio">
+        <p class="eyebrow eyebrow--centro"><span>04</span> · El gran momento</p>
+        <h2 class="seccion__titulo">Enviar respuestas</h2>
+        <p class="tarjeta__nota">
+          Con un solo toque se envían todas las respuestas de esta persona.
+          El organizador recibe tus elecciones y motivos en una hoja.
+          Si vuelves a enviar, se actualizan tus respuestas anteriores.
+        </p>
+        <button id="btn-enviar" class="btn btn--oro btn--grande" type="button">📨 Enviar respuestas</button>
+        <button id="btn-borrar" class="btn btn--peligro" type="button">🗑 Borrar lo escrito aquí</button>
+        <p id="estado-enviar" class="estado" role="status" aria-live="polite"></p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="pie">
+    <p class="pie__linea">✦</p>
+    <p>© <span id="anio"></span> Maricones Awards — El único premio es tenerlos a uno lado.</p>
+  </footer>
+
+  <script src="js/perfiles.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>
